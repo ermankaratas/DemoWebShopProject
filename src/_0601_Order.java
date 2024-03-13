@@ -91,46 +91,37 @@ public class _0601_Order extends BaseDriver {
             phoneNumber.sendKeys("0123546824");
         }
 
-        WebElement button1 = driver.findElement(By.cssSelector("[id='billing-buttons-container']>input"));
+        WebElement button1 = wait.until(ExpectedConditions.elementToBeClickable(
+                driver.findElement(By.cssSelector("[id='billing-buttons-container']>input"))));
         button1.click();
 
-        WebElement shipping = driver.findElement(By.id("opc-shipping"));
-        wait.until(ExpectedConditions.visibilityOfAllElements(shipping));
-
-        WebElement button2 = driver.findElement(By.cssSelector("[id='shipping-buttons-container']>input"));
+        WebElement button2 = wait.until(ExpectedConditions.elementToBeClickable(
+                driver.findElement(By.cssSelector("[id='shipping-buttons-container']>input"))));
         button2.click();
 
-        WebElement shippingMethod = driver.findElement(By.id("opc-shipping_method"));
-        wait.until(ExpectedConditions.visibilityOfAllElements(shippingMethod));
-
-        WebElement button3 = driver.findElement(By.cssSelector("[id='shipping-method-buttons-container']>input"));
+        WebElement button3 = wait.until(ExpectedConditions.elementToBeClickable(
+                driver.findElement(By.cssSelector("[id='shipping-method-buttons-container']>input"))));
         button3.click();
 
-        WebElement payment = driver.findElement(By.id("opc-payment_method"));
-        wait.until(ExpectedConditions.visibilityOfAllElements(payment));
-
-        WebElement button4 = driver.findElement(By.cssSelector("[id='payment-method-buttons-container']>input"));
+        WebElement button4 = wait.until(ExpectedConditions.elementToBeClickable(
+                driver.findElement(By.cssSelector("[id='payment-method-buttons-container']>input"))));
         button4.click();
 
-        WebElement paymentInfo = driver.findElement(By.id("opc-payment_info"));
-        wait.until(ExpectedConditions.visibilityOfAllElements(paymentInfo));
-
-        WebElement button5 = driver.findElement(By.cssSelector("[id='payment-info-buttons-container']>input"));
+        WebElement button5 = wait.until(ExpectedConditions.elementToBeClickable(
+                driver.findElement(By.cssSelector("[id='payment-info-buttons-container']>input"))));
         button5.click();
 
-        WebElement confirm = driver.findElement(By.id("opc-confirm_order"));
-        wait.until(ExpectedConditions.visibilityOfAllElements(confirm));
-
-        WebElement button6 = driver.findElement(By.cssSelector("[id='confirm-order-buttons-container']>input"));
+        WebElement button6 = wait.until(ExpectedConditions.elementToBeClickable(
+                driver.findElement(By.cssSelector("[id='confirm-order-buttons-container']>input"))));
         button6.click();
 
+        wait.until(ExpectedConditions.urlContains("completed"));
+
         WebElement success = driver.findElement(By.cssSelector("div[class='title']"));
-        String successText = success.getText();
-        Assert.assertTrue("Success message is incorrect",successText.equals("Your order has been successfully processed!"));
+        Assert.assertTrue("Success message is incorrect",success.getText().equals("Your order has been successfully processed!"));
 
         WebElement order = driver.findElement(By.cssSelector("ul[class='details']>li"));
-        String orderText = order.getText();
-        Assert.assertTrue("Order text is empty",!orderText.isEmpty());
+        Assert.assertTrue("Order text is empty",!order.getText().isEmpty());
 
         WaitClose();
     }
