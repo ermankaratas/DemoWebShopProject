@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 
 public class _0401_Login extends BaseDriver {
     @Test
-    public void test0301(){
+    public void test0401(){
 
         driver.get("https://demowebshop.tricentis.com/");
 

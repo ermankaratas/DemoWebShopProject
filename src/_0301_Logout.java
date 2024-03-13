@@ -33,7 +33,7 @@ public class _0301_Logout extends BaseDriver {
         logoutLink.click();
 
         WebElement registerLink = driver.findElement(By.linkText("Register"));
-        Assert.assertTrue("Logout is not success", registerLink.getText().equals("Register"));
+        Assert.assertTrue("Logout is not successful", registerLink.getText().equals("Register"));
 
         WaitClose();
     }
