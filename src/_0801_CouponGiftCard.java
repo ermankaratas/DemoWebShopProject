@@ -10,9 +10,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
 
-public class _0801_Order extends BaseDriver {
+public class _0801_CouponGiftCard extends BaseDriver {
     @Test
-    public void test0601(){
+    public void test0801(){
 
         driver.get("https://demowebshop.tricentis.com/");
 
