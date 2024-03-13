@@ -100,27 +100,27 @@ public class _0601_Order extends BaseDriver {
         }
 
         WebElement button1 = wait.until(ExpectedConditions.elementToBeClickable(
-                driver.findElement(By.cssSelector("[id='billing-buttons-container']>input"))));
+                By.cssSelector("[id='billing-buttons-container']>input")));
         button1.click();
 
         WebElement button2 = wait.until(ExpectedConditions.elementToBeClickable(
-                driver.findElement(By.cssSelector("[id='shipping-buttons-container']>input"))));
+                By.cssSelector("[id='shipping-buttons-container']>input")));
         button2.click();
 
         WebElement button3 = wait.until(ExpectedConditions.elementToBeClickable(
-                driver.findElement(By.cssSelector("[id='shipping-method-buttons-container']>input"))));
+                By.cssSelector("[id='shipping-method-buttons-container']>input")));
         button3.click();
 
         WebElement button4 = wait.until(ExpectedConditions.elementToBeClickable(
-                driver.findElement(By.cssSelector("[id='payment-method-buttons-container']>input"))));
+                By.cssSelector("[id='payment-method-buttons-container']>input")));
         button4.click();
 
         WebElement button5 = wait.until(ExpectedConditions.elementToBeClickable(
-                driver.findElement(By.cssSelector("[id='payment-info-buttons-container']>input"))));
+                By.cssSelector("[id='payment-info-buttons-container']>input")));
         button5.click();
 
         WebElement button6 = wait.until(ExpectedConditions.elementToBeClickable(
-                driver.findElement(By.cssSelector("[id='confirm-order-buttons-container']>input"))));
+                By.cssSelector("[id='confirm-order-buttons-container']>input")));
         button6.click();
 
         wait.until(ExpectedConditions.urlContains("completed"));
