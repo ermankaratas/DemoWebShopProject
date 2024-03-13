@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 
 public class _0201_RegisterNegative extends BaseDriver {
     @Test
-    public void test0101(){
+    public void test0201(){
         driver.get("https://demowebshop.tricentis.com/");
 
         WebElement registerLink = driver.findElement(By.linkText("Register"));
@@ -23,14 +23,14 @@ public class _0201_RegisterNegative extends BaseDriver {
         WebElement lastName = driver.findElement(By.id("LastName"));
         lastName.sendKeys("lastName");
 
-        WebElement email = driver.findElement(By.id("Email"));
-        email.sendKeys("xqw@email.com");
+        WebElement emailBox = driver.findElement(By.id("Email"));
+        emailBox.sendKeys(MyFunctions.getEmail());
 
-        WebElement password = driver.findElement(By.id("Password"));
-        password.sendKeys("123456");
+        WebElement passwordBox = driver.findElement(By.id("Password"));
+        passwordBox.sendKeys(MyFunctions.getPassword());
 
         WebElement confirmPassword = driver.findElement(By.id("ConfirmPassword"));
-        confirmPassword.sendKeys("123456");
+        confirmPassword.sendKeys(MyFunctions.getPassword());
 
         WebElement submit = driver.findElement(By.id("register-button"));
         submit.click();

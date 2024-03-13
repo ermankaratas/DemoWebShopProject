@@ -1,4 +1,5 @@
 import Utility.BaseDriver;
+import Utility.MyFunctions;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -22,14 +23,14 @@ public class _0101_Register extends BaseDriver {
         WebElement lastName = driver.findElement(By.id("LastName"));
         lastName.sendKeys("lastName");
 
-        WebElement email = driver.findElement(By.id("Email"));
-        email.sendKeys("xqw@email.com");
+        WebElement emailBox = driver.findElement(By.id("Email"));
+        emailBox.sendKeys(MyFunctions.getEmail());
 
-        WebElement password = driver.findElement(By.id("Password"));
-        password.sendKeys("123456");
+        WebElement passwordBox = driver.findElement(By.id("Password"));
+        passwordBox.sendKeys(MyFunctions.getPassword());
 
         WebElement confirmPassword = driver.findElement(By.id("ConfirmPassword"));
-        confirmPassword.sendKeys("123456");
+        confirmPassword.sendKeys(MyFunctions.getPassword());
 
         WebElement submit = driver.findElement(By.id("register-button"));
         submit.click();

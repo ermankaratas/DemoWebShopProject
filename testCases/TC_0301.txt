@@ -1,0 +1,8 @@
+1. Open the web browser and go to "https://demowebshop.tricentis.com/".
+2. Click the "Login" button.
+3. When the login is opened, verify that your username appears.
+4. Click the "Logout" link next to your username.
+5. Verify the logout.
+
+EXPECTED RESULT:
+- The user in the login position successfully logouts. (Session is ended for the user)
