@@ -44,14 +44,20 @@ public class _0601_Order extends BaseDriver {
         WebElement notebooks = driver.findElement(By.linkText("Notebooks"));
         notebooks.click();
 
+        wait.until(ExpectedConditions.urlContains("notebooks"));
+
         WebElement laptop = driver.findElement(By.linkText("14.1-inch Laptop"));
         laptop.click();
+
+        wait.until(ExpectedConditions.urlContains("141-inch-laptop"));
 
         WebElement addToCart = driver.findElement(By.cssSelector("input[class='button-1 add-to-cart-button']"));
         addToCart.click();
 
         WebElement shoppingCart = driver.findElement(By.linkText("Shopping cart"));
         shoppingCart.click();
+
+        wait.until(ExpectedConditions.urlContains("cart"));
 
         WebElement country = driver.findElement(By.id("CountryId"));
         Select countryMenu = new Select(country);
@@ -66,6 +72,8 @@ public class _0601_Order extends BaseDriver {
 
         WebElement checkout = driver.findElement(By.id("checkout"));
         checkout.click();
+
+        wait.until(ExpectedConditions.urlContains("onepagecheckout"));
 
         WebElement nameBill = driver.findElement(By.id("BillingNewAddress_FirstName"));
 
